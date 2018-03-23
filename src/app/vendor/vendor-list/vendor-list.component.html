@@ -1,0 +1,33 @@
+<div id="component">
+	<div id="pagetitle">
+		<span>{{ pagetitle}}</span> | <a routerLink="/vendors/create">Createnew</a> 
+</div>
+
+<div id = "content">
+	<table class="table table-sm">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Code</th>
+				<th>Name</th>
+				<th>Phone</th>
+				<th>Email</th>
+				<th>Actions</th>
+			</tr>
+			
+		</thead>
+		<tbody>
+			<tr *ngFor="let vendor of vendors">
+				<td>{{vendor.Id}}</td>
+				<td>{{vendor.Code}}</td>
+				<td>{{vendor.Name}}</td>
+				<td>{{vendor.Phone}}</td>
+				<td>{{vendor.Email}}</td>
+				<td>
+					<a routerLink="/vendors/detail/{{vendor.Id}}">Detail |</a>
+					<a routerLink="/vendors/edit/{{vendor.Id}}">Edit</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
