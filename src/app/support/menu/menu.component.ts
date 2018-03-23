@@ -13,6 +13,7 @@ export class MenuComponent implements OnInit {
   	new Menu("Home", "/home", "Home Page"),
     new Menu("Users", "/users/list", "The user list display"),
     new Menu("Vendors", "/vendors/list", "The vendor list display"),
+    new Menu("Products", "/products/list", "The product list display"),
   	new Menu("About", "/about", "About Page")
   ];
 
