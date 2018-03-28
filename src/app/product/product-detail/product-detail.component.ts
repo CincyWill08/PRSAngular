@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { ProductService } from '../../services/product.service';
+import { Product } from '../../models/product';
 
 @Component({
   selector: 'app-product-detail',
@@ -7,9 +11,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductDetailComponent implements OnInit {
 
-  constructor() { }
+	pagetitle: string = "Product Detail";
+	product: Product;
+
+  constructor(private ProductSvc: ProductService,
+    private router: Router, 
+  	private route: ActivatedRoute
+    ) { }
+
+  remove(): void {
+    this.ProductSvc.Remove(this.product)
+      .subscribe(res => {
+          console.log(res);
+          this.router.navigateByUrl("/products/list");
+      });
+    
+  }
+
+  getProductById(id){
+  	this.ProductSvc.Get(id)
+  	.subscribe(product => {
+  		this.product = product;
+  		console.log("Product:", product);
+  	});
+  }
 
   ngOnInit() {
+  	this.route.params
+  	.subscribe(parms => {
+  		let id = parms["id"];
+  		this.getProductById(id);
+  	});
+
   }
 
 }
