@@ -11,10 +11,11 @@
 				<th>Description</th>
 				<th>Justification</th>
 				<th>DeliveryMode</th>
+				<th>Status</th>
 				<th>Total</th>
-				<th>Active</th>
 				<th>ReasonForRejection</th>
-				<th>UserId</th>
+				<th>User</th>
+				<th>Actions</th>
 			</tr>
 			
 		</thead>
@@ -24,9 +25,10 @@
 				<td>{{purchaserequest.Description}}</td>
 				<td>{{purchaserequest.Justification}}</td>
 				<td>{{purchaserequest.DeliveryMode}}</td>
+				<td>{{purchaserequest.Status}}</td>
 				<td>{{purchaserequest.Total | currency}}</td>
 				<td>{{purchaserequest.ReasonForRejection}}</td>
-				<td>{{purchaserequest.User.Name}}</td>
+				<td>{{purchaserequest.User.FirstName+" "+purchaserequest.User.LastName}}</td>
 				<td>
 					<a routerLink="/purchaserequests/detail/{{purchaserequest.Id}}">Detail |</a>
 					<a routerLink="/purchaserequests/edit/{{purchaserequest.Id}}">Edit |</a>

@@ -1,3 +1,29 @@
-<p>
+<!-- <p>
   purchase-request-line-item-detail works!
-</p>
+</p> -->
+
+<div id="component">
+	<div id="pagetitle">
+		<span>{{ pagetitle}}</span>
+	</div>
+
+	<div id = "content">
+  	<table class="table table-sm" *ngIf="purchaseRequestLineItem">
+  		<tbody>
+
+			<tr><th>Id</th><td>{{purchaseRequestLineItem.Id}}</td></tr>
+			<tr><th>Quantity</th><td>{{purchaseRequestLineItem.Quantity}}</td></tr>
+			<tr><th>Active</th><td>{{purchaseRequestLineItem.Active}}</td></tr>			
+			<tr><th>Purchase Request Id</th><td>{{purchaseRequestLineItem.PurchaseRequestId}}</td></tr>
+			<tr><th>Product</th><td>{{purchaseRequestLineItem.Product.Name}}</td></tr>
+			<tr>
+			<a routerLink="/purchaserequestlineitems/edit/
+			{{purchaseRequestLineItem.PurchaseRequestId}}/
+			{{purchaseRequestLineItem.Id}}" class="btn btn-warning">Edit</a>
+			<button (click)="review()" class="btn btn-primary">Review</button>
+			<button (click)="remove()" class="btn btn-danger">Delete</button>
+			</tr>
+		</tbody>
+  	</table>
+	</div>
+</div>

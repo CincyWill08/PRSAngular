@@ -32,10 +32,14 @@ import { PurchaseRequestListComponent } from './purchase-request/purchase-reques
 import { PurchaseRequestDetailComponent } from './purchase-request/purchase-request-detail/purchase-request-detail.component';
 import { PurchaseRequestCreateComponent } from './purchase-request/purchase-request-create/purchase-request-create.component';
 import { PurchaseRequestEditComponent } from './purchase-request/purchase-request-edit/purchase-request-edit.component';
+import { PurchaseRequestLinesComponent } from './purchase-request/purchase-request-lines/purchase-request-lines.component';
 import { PurchaseRequestLineItemListComponent } from './purchase-request-line-item/purchase-request-line-item-list/purchase-request-line-item-list.component';
 import { PurchaseRequestLineItemDetailComponent } from './purchase-request-line-item/purchase-request-line-item-detail/purchase-request-line-item-detail.component';
 import { PurchaseRequestLineItemCreateComponent } from './purchase-request-line-item/purchase-request-line-item-create/purchase-request-line-item-create.component';
 import { PurchaseRequestLineItemEditComponent } from './purchase-request-line-item/purchase-request-line-item-edit/purchase-request-line-item-edit.component';
+import { PurchaseRequestReviewComponent } from './purchase-request/purchase-request-review/purchase-request-review.component';
+import { PurchaseRequestReviewItemComponent } from './purchase-request/purchase-request-review-item/purchase-request-review-item.component';
+
 
 
 @NgModule({
@@ -61,10 +65,13 @@ import { PurchaseRequestLineItemEditComponent } from './purchase-request-line-it
     PurchaseRequestDetailComponent,
     PurchaseRequestCreateComponent,
     PurchaseRequestEditComponent,
+    PurchaseRequestLinesComponent,
     PurchaseRequestLineItemListComponent,
     PurchaseRequestLineItemDetailComponent,
     PurchaseRequestLineItemCreateComponent,
-    PurchaseRequestLineItemEditComponent
+    PurchaseRequestLineItemEditComponent,
+    PurchaseRequestReviewComponent,
+    PurchaseRequestReviewItemComponent
   ],
   imports: [
     BrowserModule,

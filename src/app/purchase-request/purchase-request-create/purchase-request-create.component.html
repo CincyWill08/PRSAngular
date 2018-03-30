@@ -29,6 +29,14 @@
 		</div>
 
 		<div class="form-group row">
+			<label class='col-form-label col-sm-2' for="purchaserequeststatus">Status:</label>
+			<input [(ngModel)]='purchaseRequest.Status' name='Status' type="text"
+			class="form-control col-sm-6" id="purchaserequeststatus" aria-describedby="
+			StatusHelp" placeholder="Status">
+			<small id="StatusHelp" class="form-text text-muted col-sm-2">The status</small>
+		</div>
+
+		<div class="form-group row">
 			<label class='col-form-label col-sm-2' for="purchaserequesttotal">Total:</label>
 			<input [(ngModel)]='purchaseRequest.Total' name='Total' type="text"
 			class="form-control col-sm-6" id="purchaserequesttotal" aria-describedby="
@@ -52,7 +60,7 @@
 				id='purchase-request-user'> 
 						<option *ngFor="let user of users" 
 						[ngValue]="user.Id" 
-						[selected]="user.Id == purchaseRequest.UserId">{{user.FirstName}}
+						[selected]="user.Id == purchaseRequest.UserId">{{user.FirstName+" "+user.LastName}}
 						</option>
 				</select>
 			</div>

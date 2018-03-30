@@ -20,6 +20,7 @@ import { PurchaseRequestListComponent } from './purchase-request/purchase-reques
 import { PurchaseRequestDetailComponent } from './purchase-request/purchase-request-detail/purchase-request-detail.component';
 import { PurchaseRequestCreateComponent } from './purchase-request/purchase-request-create/purchase-request-create.component';
 import { PurchaseRequestEditComponent } from './purchase-request/purchase-request-edit/purchase-request-edit.component';
+import { PurchaseRequestLinesComponent } from './purchase-request/purchase-request-lines/purchase-request-lines.component';
 
 import { PurchaseRequestLineItemListComponent } from './purchase-request-line-item/purchase-request-line-item-list/purchase-request-line-item-list.component';
 import { PurchaseRequestLineItemDetailComponent } from './purchase-request-line-item/purchase-request-line-item-detail/purchase-request-line-item-detail.component';
@@ -50,11 +51,12 @@ const routes: Routes = [
 	{path: "purchaserequests/edit/:id", component: PurchaseRequestEditComponent},
 	{path: "purchaserequests/list", component: PurchaseRequestListComponent},
 	{path: "purchaserequests/create", component: PurchaseRequestCreateComponent},
+	{path: "purchaserequests/lines/:id", component: PurchaseRequestLinesComponent},
 
-	{path: "purchaserequestlineitems/detail/:id", component: PurchaseRequestLineItemDetailComponent},
-	{path: "purchaserequestlineitems/edit/:id", component: PurchaseRequestLineItemEditComponent},
+	{path: "purchaserequestlineitems/detail/:prid/:id", component: PurchaseRequestLineItemDetailComponent},
+	{path: "purchaserequestlineitems/edit/:prid/:id", component: PurchaseRequestLineItemEditComponent},
 	{path: "purchaserequestlineitems/list", component: PurchaseRequestLineItemListComponent},
-	{path: "purchaserequestlineitems/create", component: PurchaseRequestLineItemCreateComponent},
+	{path: "purchaserequestlineitems/create/:prid", component: PurchaseRequestLineItemCreateComponent},
 
 	{path: "home", component: HomeComponent},
 	{path: "about", component: AboutComponent},

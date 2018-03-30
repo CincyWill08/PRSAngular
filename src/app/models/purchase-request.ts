@@ -3,6 +3,7 @@ export class PurchaseRequest {
 	Description: string;
 	Justification: string;
 	DeliveryMode: string;
+	Status: string;
 	Total: number;
 	Active: boolean;
 	ReasonForRejection: string;
@@ -13,6 +14,7 @@ export class PurchaseRequest {
 		Description: string,
 		Justification: string,
 		DeliveryMode: string,
+		Status: string;
 		Total: number,
 		Active: boolean,
 		ReasonForRejection: string,
@@ -21,7 +23,8 @@ export class PurchaseRequest {
 		this.Id =  Id;
 		this.Description = Description;
 		this.Justification = Justification;
-		this.DeliveryMode = DeliveryMode; 
+		this.DeliveryMode = DeliveryMode;
+		this.Status = Status; 
 		this.Active = Active;
 		this.ReasonForRejection = ReasonForRejection;
 		this.UserId = UserId;

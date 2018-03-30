@@ -52,7 +52,7 @@
 				id='purchase-request-user'> 
 						<option *ngFor="let user of users" 
 						[ngValue]="user.Id" 
-						[selected]="user.Id == purchaseRequest.UserId">{{user.FirstName}}
+						[selected]="user.Id == purchaseRequest.UserId">{{user.FirstName+" "+user.LastName}}
 						</option>
 				</select>
 			</div>

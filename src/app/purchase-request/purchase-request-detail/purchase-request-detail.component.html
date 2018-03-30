@@ -11,6 +11,7 @@
 			<tr><th>Description</th><td>{{purchaseRequest.Description}}</td></tr>
 			<tr><th>Justification</th><td>{{purchaseRequest.Justification}}</td></tr>			
 			<tr><th>Delivery Mode</th><td>{{purchaseRequest.DeliveryMode}}</td></tr>
+			<tr><th>Status</th><td>{{purchaseRequest.Status}}</td></tr>
 			<tr><th>Total</th><td>{{purchaseRequest.Total | currency }}</td></tr>
 			<tr><th>Active</th><td>{{purchaseRequest.Active==true?"Yes":"No"}}</td></tr>
 			<tr><th>Reason for Rejection</th><td>{{purchaseRequest.ReasonForRejection}}</td></tr>
@@ -19,7 +20,7 @@
 			<!-- <tr><th>Actions</th><tr> -->
 			<tr>
 			<a routerLink="/purchaserequests/edit/{{purchaseRequest.Id}}" class="btn btn-warning">Edit</a>
-			<a routerLink="/purchaserequests/review/{{purchaseRequest.Id}}" class="btn btn-primary">Review</a>
+			<button (click)="review()" class="btn btn-primary">Review</button>
 			<button (click)="remove()" class="btn btn-danger">Delete</button>
 			</tr>
 		</tbody>

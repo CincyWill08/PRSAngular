@@ -15,7 +15,7 @@ export class PurchaseRequestCreateComponent implements OnInit {
 
   pagetitle: string = "Purchase Request Create";
 
-  purchaseRequest: PurchaseRequest = new PurchaseRequest(0, '', '', '', 0, false, '', 0);
+  purchaseRequest: PurchaseRequest = new PurchaseRequest(0, '', '', '', '', 0, false, '', 0);
   users: User[];
 
   constructor(
