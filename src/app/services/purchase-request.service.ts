@@ -13,6 +13,10 @@ export class PurchaseRequestService {
   	return this.http.get(url+"List") as Observable<PurchaseRequest[]>;
   }
 
+  ReviewList(): Observable<PurchaseRequest[]>{
+    return this.http.get(url+"ReviewList") as Observable<PurchaseRequest[]>;
+  }
+
   Get(Id: string): Observable<PurchaseRequest>{
   	return this.http.get(url+"Get/"+Id) as Observable<PurchaseRequest>;
   }

@@ -13,11 +13,32 @@ export class PurchaseRequestDetailComponent implements OnInit {
 
 	pagetitle: string = "Purchase Request Detail";
 	purchaseRequest: PurchaseRequest;
+  isHidden: boolean = true;
 
   constructor(private purchaseRequestSvc: PurchaseRequestService,
     private router: Router, 
   	private route: ActivatedRoute
     ) { }
+
+  review(): void{
+    
+    if (this.purchaseRequest.Total <= 50) {
+      this.purchaseRequest.Status = "APPROVED";
+    }
+    else {
+      this.purchaseRequest.Status = "REVIEW";
+    }
+
+    this.purchaseRequestSvc.Change(this.purchaseRequest)
+      .subscribe(res =>{
+        console.log(res);
+        this.router.navigateByUrl("/purchaserequests/list");
+      })
+  }
+
+  verify(): void {
+    this.isHidden = false;
+  }
 
   remove(): void {
     this.purchaseRequestSvc.Remove(this.purchaseRequest)

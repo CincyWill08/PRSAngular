@@ -12,7 +12,7 @@ import { PurchaseRequest } from '../../models/purchase-request';
 export class PurchaseRequestListComponent implements OnInit {
 
 
-	pagetitle: string = "PurchaseRequest List";
+	pagetitle: string = "Purchase Request List";
 	purchaserequests: PurchaseRequest[];
 
   constructor(private purchaseRequestSvc: PurchaseRequestService) { }

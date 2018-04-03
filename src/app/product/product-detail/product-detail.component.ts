@@ -13,11 +13,17 @@ export class ProductDetailComponent implements OnInit {
 
 	pagetitle: string = "Product Detail";
 	product: Product;
+  isHidden: boolean = true;
 
   constructor(private ProductSvc: ProductService,
     private router: Router, 
   	private route: ActivatedRoute
     ) { }
+
+
+ verify(): void {
+    this.isHidden = false;
+  }
 
   remove(): void {
     this.ProductSvc.Remove(this.product)

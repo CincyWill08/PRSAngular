@@ -19,9 +19,10 @@
 			<tr>
 			<a routerLink="/purchaserequestlineitems/edit/
 			{{purchaseRequestLineItem.PurchaseRequestId}}/
-			{{purchaseRequestLineItem.Id}}" class="btn btn-warning">Edit</a>
-			<button (click)="review()" class="btn btn-primary">Review</button>
-			<button (click)="remove()" class="btn btn-danger">Delete</button>
+			{{purchaseRequestLineItem.Id}}" class="btn btn-warning">Edit</a> |
+			<button (click)="verify()" class="btn btn-danger">Delete</button> |
+			<button [hidden]="isHidden" (click)="remove()" class="btn btn-danger">Verify Delete</button>
+
 			</tr>
 		</tbody>
   	</table>

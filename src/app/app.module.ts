@@ -4,12 +4,14 @@ import { HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
+import { CanReviewGuard } from './guards/can-review.guard';
 
 import {UserService} from './services/user.service';
 import {VendorService} from './services/vendor.service';
 import {ProductService} from './services/product.service';
 import {PurchaseRequestService} from './services/purchase-request.service';
 import {PurchaseRequestLineItemService} from './services/purchase-request-line-item.service';
+import {SystemService} from './services/system.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './support/home/home.component';
@@ -39,6 +41,8 @@ import { PurchaseRequestLineItemCreateComponent } from './purchase-request-line-
 import { PurchaseRequestLineItemEditComponent } from './purchase-request-line-item/purchase-request-line-item-edit/purchase-request-line-item-edit.component';
 import { PurchaseRequestReviewComponent } from './purchase-request/purchase-request-review/purchase-request-review.component';
 import { PurchaseRequestReviewItemComponent } from './purchase-request/purchase-request-review-item/purchase-request-review-item.component';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserLogoutComponent } from './user/user-logout/user-logout.component';
 
 
 
@@ -71,7 +75,9 @@ import { PurchaseRequestReviewItemComponent } from './purchase-request/purchase-
     PurchaseRequestLineItemCreateComponent,
     PurchaseRequestLineItemEditComponent,
     PurchaseRequestReviewComponent,
-    PurchaseRequestReviewItemComponent
+    PurchaseRequestReviewItemComponent,
+    UserLoginComponent,
+    UserLogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +87,7 @@ import { PurchaseRequestReviewItemComponent } from './purchase-request/purchase-
   ],
   providers: [
     UserService, VendorService, ProductService, PurchaseRequestService,
-    PurchaseRequestLineItemService
+    PurchaseRequestLineItemService, SystemService, CanReviewGuard
   ],
   bootstrap: [AppComponent]
 })

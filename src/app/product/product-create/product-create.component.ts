@@ -5,7 +5,6 @@ import { Product } from '../../models/product';
 import { VendorService } from '../../services/vendor.service';
 import { Vendor } from '../../models/vendor';
 
-
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',

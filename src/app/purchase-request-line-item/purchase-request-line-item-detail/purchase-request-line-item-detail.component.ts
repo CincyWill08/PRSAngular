@@ -16,10 +16,15 @@ export class PurchaseRequestLineItemDetailComponent implements OnInit {
 	pagetitle: string = "Purchase Request Line Item Detail";
 	purchaseRequestLineItem: PurchaseRequestLineItem;
 	purchaseRequestId: number;
+  isHidden: boolean = true;
 
   constructor(private purchaseRequestLineItemSvc: PurchaseRequestLineItemService,
     private router: Router, 
   	private route: ActivatedRoute) { }
+
+  verify(): void {
+    this.isHidden = false;
+  }
 
   remove(): void {
     this.purchaseRequestLineItemSvc.Remove(this.purchaseRequestLineItem)

@@ -13,11 +13,16 @@ export class UserDetailComponent implements OnInit {
 
 	pagetitle: string = "User Detail";
 	user: User;
+  isHidden: boolean = true;
 
   constructor(private UserSvc: UserService,
     private router: Router, 
   	private route: ActivatedRoute
     ) { }
+
+  verify(): void {
+    this.isHidden = false;
+  }
 
   remove(): void {
     this.UserSvc.Remove(this.user)

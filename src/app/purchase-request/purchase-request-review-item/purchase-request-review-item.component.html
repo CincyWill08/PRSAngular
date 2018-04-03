@@ -1,3 +1,45 @@
-<p>
-  purchase-request-review-item works!
-</p>
+<div id="component">
+  <div id="pagetitle">
+    <span>{{ pagetitle }}</span>
+ <!--    <a *ngIf="purchaseRequest" routerLink="/purchaserequestlineitems/create/{{purchaseRequest.Id}}">Create New</a> -->
+  </div>
+  <div id="content" *ngIf="purchaseRequest">
+    <table class="table table-sm">
+      <tr>
+        <th>Id</th>
+        <th>Description</th>
+        <th>Justification</th>
+        <th>Status</th>
+        <th>Total</th>
+        <th>User</th>
+      </tr>
+      <tr>
+        <td>{{purchaseRequest.Id}}</td>
+        <td>{{purchaseRequest.Description }}</td>
+        <td>{{purchaseRequest.Justification}}</td>
+        <td>{{purchaseRequest.Status}}</td>
+        <td>{{purchaseRequest.Total | currency}}</td>
+        <td>{{purchaseRequest.User.FirstName+" "+purchaseRequest.User.LastName}}</td>
+      </tr>
+    </table>
+    <hr />
+    <table class="table table-sm">
+      <tr>
+        <th>Id</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Subtotal</th>
+      </tr>
+      <tr *ngFor="let purchaseRequestLineItem of purchaseRequest.PurchaseRequestLineItems">
+        <td>{{ purchaseRequestLineItem.Id }}</td>
+        <td>{{ purchaseRequestLineItem.Product.Name }}</td>
+        <td>{{ purchaseRequestLineItem.Quantity }}</td>
+        <td>{{ purchaseRequestLineItem.Product.Price | currency }}</td>
+        <td>{{ (purchaseRequestLineItem.Quantity * purchaseRequestLineItem.Product.Price) | currency }}</td>      
+      </tr>
+    </table>
+    <button (click)="approve()" class="btn btn-success">Approve</button>
+    <button (click)="reject()" class="btn btn-danger">Reject</button>
+  </div>
+</div>

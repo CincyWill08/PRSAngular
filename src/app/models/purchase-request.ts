@@ -14,7 +14,7 @@ export class PurchaseRequest {
 		Description: string,
 		Justification: string,
 		DeliveryMode: string,
-		Status: string;
+		Status: string,
 		Total: number,
 		Active: boolean,
 		ReasonForRejection: string,

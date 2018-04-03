@@ -13,11 +13,16 @@ export class VendorDetailComponent implements OnInit {
 
 	pagetitle: string = "Vendor Detail";
 	vendor: Vendor;
+  isHidden: boolean = true;
 
   constructor(private VendorSvc: VendorService,
     private router: Router, 
   	private route: ActivatedRoute
     ) { }
+
+  verify(): void {
+    this.isHidden = false;
+  }
 
   remove(): void {
     this.VendorSvc.Remove(this.vendor)

@@ -20,8 +20,14 @@
 			<!-- <tr><th>Actions</th><tr> -->
 			<tr>
 			<a routerLink="/purchaserequests/edit/{{purchaseRequest.Id}}" class="btn btn-warning">Edit</a>
-			<button (click)="review()" class="btn btn-primary">Review</button>
-			<button (click)="remove()" class="btn btn-danger">Delete</button>
+
+			<span [hidden]="(purchaseRequest.Status=='APPROVED') || (purchaseRequest.Status=='REVIEW')">
+     		 <button (click)="review()" class="btn btn-primary">Review</button>
+    		</span> |
+
+			<button (click)="verify()" class="btn btn-danger">Delete</button> |
+			<button [hidden]="isHidden" (click)="remove()" class="btn btn-danger">Verify Delete</button>
+
 			</tr>
 		</tbody>
   	</table>
