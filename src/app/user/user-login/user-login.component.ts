@@ -24,7 +24,7 @@ export class UserLoginComponent implements OnInit {
 
   login(): void {
     this.SysSvc.setNotLogin();
-    this.UserSvc.Login(this.user.Username, this.user.Password)
+    this.UserSvc.Login(this.user.UserName, this.user.Password)
       .subscribe(res => {
         if(res.Result.toUpperCase() === "SUCCESS") {
           this.user = res.Data;
